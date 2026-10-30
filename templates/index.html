@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#30251f">
+  <meta name="description" content="CollegeBot — a warm, helpful college enquiry assistant.">
+  <title>CollegeBot — Your Campus Companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="/" aria-label="CollegeBot home">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span class="brand-name">college<span>bot</span><small>CAMPUS COMPANION</small></span>
+      </a>
+
+      <div class="side-label">YOUR SPACE</div>
+      <button class="nav-item active" id="newChatBtn">
+        <span class="nav-icon">＋</span><span>New conversation</span>
+      </button>
+      <div class="side-label topics-label">QUICK TOPICS</div>
+      <button class="topic-link" data-prompt="What courses are available?"><span class="topic-dot sage"></span>Courses & programs</button>
+      <button class="topic-link" data-prompt="How do I apply for admission?"><span class="topic-dot amber"></span>Admissions</button>
+      <button class="topic-link" data-prompt="Tell me about fees and scholarships."><span class="topic-dot brown"></span>Fees & scholarships</button>
+      <button class="topic-link" data-prompt="What facilities are available?"><span class="topic-dot sage"></span>Campus facilities</button>
+
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <div class="help-spark">✳</div>
+          <div><strong>Need a little help?</strong><p>Ask naturally. We'll find the right direction together.</p></div>
+        </div>
+        <div class="sidebar-foot"><span class="status-dot"></span> Rule-based assistant <span class="version">v1.0</span></div>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Toggle menu">☰</button>
+        <div class="breadcrumb"><span>Workspace</span><span class="crumb-slash">/</span><strong>College assistant</strong></div>
+        <div class="topbar-right"><span class="online-pill"><i></i> Ready to help</span><div class="avatar">C</div></div>
+      </header>
+
+      <section class="chat-layout">
+        <div class="welcome" id="welcome">
+          <div class="eyebrow"><span class="eyebrow-line"></span> YOUR CAMPUS, MADE SIMPLER</div>
+          <div class="hero-emblem"><div class="emblem-ring"></div><div class="emblem-core">✳</div><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span></div>
+          <h1>A little help with<br>your <em>college life.</em></h1>
+          <p class="welcome-copy">Questions about campus? You're in the right place.<br>Let's figure it out, one question at a time.</p>
+
+          <div class="suggestion-grid">
+            <button class="suggestion-card" data-prompt="What courses are available?">
+              <span class="suggestion-icon sage-icon">⌘</span><span><strong>Explore courses</strong><small>Find your study path</small></span><b>↗</b>
+            </button>
+            <button class="suggestion-card" data-prompt="How do I apply for admission?">
+              <span class="suggestion-icon amber-icon">✳</span><span><strong>Admission guide</strong><small>Know how to get started</small></span><b>↗</b>
+            </button>
+            <button class="suggestion-card" data-prompt="Tell me about fees and scholarships.">
+              <span class="suggestion-icon brown-icon">₹</span><span><strong>Fees & support</strong><small>Plan with confidence</small></span><b>↗</b>
+            </button>
+            <button class="suggestion-card" data-prompt="What facilities are available?">
+              <span class="suggestion-icon sage-icon">⌂</span><span><strong>Campus life</strong><small>Discover facilities</small></span><b>↗</b>
+            </button>
+          </div>
+          <div class="privacy-note"><span>✧</span> Helpful answers, without the runaround.</div>
+        </div>
+
+        <div class="messages" id="messages" aria-live="polite" aria-label="Conversation"></div>
+
+        <div class="composer-wrap">
+          <div class="composer">
+            <textarea id="messageInput" rows="1" placeholder="Ask anything about college..." aria-label="Type your message"></textarea>
+            <button class="send-button" id="sendBtn" aria-label="Send message"><span>↑</span></button>
+          </div>
+          <div class="composer-meta"><span><i class="tiny-spark">✳</i> CollegeBot can make mistakes. Confirm important details with your college.</span><span class="enter-hint">ENTER TO SEND <kbd>↵</kbd></span></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="mobile-scrim" id="mobileScrim"></div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
